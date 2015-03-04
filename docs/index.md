@@ -2,4 +2,4 @@
 
 
 ## Concepts
-- [Managing Blacklists](/picket/blacklist)
+- [Blacklists](/picket/blacklist)
