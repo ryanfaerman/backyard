@@ -1,11 +1,6 @@
 package command
 
-import (
-	"fmt"
-
-	"github.com/codegangsta/cli"
-	"github.com/ryanfaerman/picket/picket"
-)
+import "github.com/codegangsta/cli"
 
 var blacklist map[string][]string
 
@@ -27,10 +22,5 @@ var Blacklist = cli.Command{
 		println(c.Bool("remote"))
 		println(c.String("group"))
 
-		item := c.Args().First()
-		if item != "" {
-			picket.AddToBlacklist(item)
-		}
-		fmt.Println(picket.ListBlacklist())
 	},
 }
