@@ -1,8 +1,10 @@
 package main
 
 import (
-	"fmt"
 	"os"
+
+	"github.com/codegangsta/cli"
+	"github.com/ryanfaerman/picket/command"
 )
 
 func main() {
@@ -10,7 +12,13 @@ func main() {
 }
 
 func realMain() int {
-	args := os.Args[1:]
-	fmt.Println(args)
+	app := cli.NewApp()
+	app.Name = "picket"
+
+	app.Commands = []cli.Command{
+		command.Blacklist,
+	}
+
+	app.Run(os.Args)
 	return 0
 }
